@@ -250,7 +250,6 @@ namespace desktopdb
             this.id_treningTextBox.Name = "id_treningTextBox";
             this.id_treningTextBox.Size = new System.Drawing.Size(104, 20);
             this.id_treningTextBox.TabIndex = 2;
-            this.id_treningTextBox.Visible = false;
             // 
             // id_zawodnikTextBox
             // 
@@ -260,7 +259,6 @@ namespace desktopdb
             this.id_zawodnikTextBox.Name = "id_zawodnikTextBox";
             this.id_zawodnikTextBox.Size = new System.Drawing.Size(104, 20);
             this.id_zawodnikTextBox.TabIndex = 4;
-            this.id_zawodnikTextBox.Visible = false;
             // 
             // obecnyCheckBox
             // 
@@ -283,6 +281,7 @@ namespace desktopdb
             this.comboBox1.Size = new System.Drawing.Size(154, 24);
             this.comboBox1.TabIndex = 31;
             this.comboBox1.Text = "Wybierz";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -295,6 +294,7 @@ namespace desktopdb
             this.comboBox2.Size = new System.Drawing.Size(154, 24);
             this.comboBox2.TabIndex = 32;
             this.comboBox2.Text = "Wybierz";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // modyfikuj_obecnosc
             // 

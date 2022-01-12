@@ -79,7 +79,7 @@ namespace desktopdb
                 myreader = cmddatabase.ExecuteReader();
                 while (myreader.Read())
                 {
-                    Object sname = myreader.GetValue(myreader.GetOrdinal("ID_klub"));
+                    Object sname = myreader.GetValue(myreader.GetOrdinal("id_klub"));
                     id_klubTextBox.Text = sname.ToString();
                 }
             }

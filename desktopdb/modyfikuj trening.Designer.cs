@@ -180,7 +180,7 @@ namespace desktopdb
             this.treningBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.treningBindingNavigator.Name = "treningBindingNavigator";
             this.treningBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.treningBindingNavigator.Size = new System.Drawing.Size(307, 25);
+            this.treningBindingNavigator.Size = new System.Drawing.Size(613, 25);
             this.treningBindingNavigator.TabIndex = 0;
             this.treningBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -296,7 +296,6 @@ namespace desktopdb
             this.id_bazaTextBox.Name = "id_bazaTextBox";
             this.id_bazaTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_bazaTextBox.TabIndex = 4;
-            this.id_bazaTextBox.Visible = false;
             // 
             // id_klubTextBox
             // 
@@ -306,7 +305,6 @@ namespace desktopdb
             this.id_klubTextBox.Name = "id_klubTextBox";
             this.id_klubTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_klubTextBox.TabIndex = 6;
-            this.id_klubTextBox.Visible = false;
             // 
             // obciazenieTextBox
             // 
@@ -362,7 +360,7 @@ namespace desktopdb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 221);
+            this.ClientSize = new System.Drawing.Size(613, 253);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(id_treningLabel);

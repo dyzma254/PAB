@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace desktopdb
 {
@@ -16,7 +9,7 @@ namespace desktopdb
     {
 
         string Polaczenie = "Data Source=DYZMA-KOMPUTER;Initial Catalog=pab;Integrated Security=True";
-        
+
         public glowneinfo()
         {
             InitializeComponent();
@@ -32,11 +25,11 @@ namespace desktopdb
 
         }
 
-        
-            
-            
-            
-        
+
+
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -98,7 +91,7 @@ namespace desktopdb
             DataTable dtMarka = new DataTable();
             using (SqlConnection connection = new SqlConnection(Polaczenie))
             {
-                using (SqlCommand cmd = new SqlCommand("select * from trening", connection))
+                using (SqlCommand cmd = new SqlCommand("select id_trening, baza_treningowa.nazwa, Klub.nazwa,  obciazenie, typ_treningu, data_treningu from trening INNER JOIN baza_treningowa on  trening.id_baza = baza_treningowa.id_baza INNER JOIN Klub on trening.id_klub = Klub.id_klub", connection))
                 {
                     connection.Open();
                     SqlDataReader czytaj = cmd.ExecuteReader();
@@ -134,8 +127,8 @@ namespace desktopdb
             DataTable dtRabat = new DataTable();
             using (SqlConnection connection = new SqlConnection(Polaczenie))
             {
-               //" kluby select id_klub, Liga.nazwa, Klub.nazwa, Klub.kraj, ile_tytulow, miasto from Klub INNER JOIN Liga on Klub.Id_liga = Liga.Id_liga"
-                using (SqlCommand cmd = new SqlCommand("select * from Zawodnicy_na_treningu INNER JOIN trening on zawodnicy_na_treningu.id_trening = trening.id_trening ", connection))
+                //" kluby select id_klub, Liga.nazwa, Klub.nazwa, Klub.kraj, ile_tytulow, miasto from Klub INNER JOIN Liga on Klub.Id_liga = Liga.Id_liga"
+                using (SqlCommand cmd = new SqlCommand("select trening.typ_treningu, Zawodnik.nazwisko, obecny from Zawodnicy_na_treningu INNER JOIN trening on Zawodnicy_na_treningu.id_trening = trening.id_trening INNER JOIN Zawodnik on Zawodnicy_na_treningu.id_zawodnik = Zawodnik.id_zawodnik", connection))
                 {
                     connection.Open();
                     SqlDataReader czytaj = cmd.ExecuteReader();
@@ -148,14 +141,14 @@ namespace desktopdb
             }
         }
 
-                
+
 
         private void button9_Click(object sender, EventArgs e)
         {
-         
+
             //this.Hide();
             dataGridView1.Visible = false;
-         
+
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -196,7 +189,7 @@ namespace desktopdb
             form8.ShowDialog();
         }
 
-   
+
         private void button13_Click(object sender, EventArgs e)
         {
             modyfikuj_liga form10 = new modyfikuj_liga();

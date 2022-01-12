@@ -131,7 +131,7 @@ namespace desktopdb
             //klub
 
             string constring = "Data Source=DYZMA-KOMPUTER;Initial Catalog=pab;Integrated Security=True";
-            string query = "select * from klub where CONVERT(VARCHAR,nazwa)='" + comboBox1.Text + "';";
+            string query = "select * from klub where CONVERT(VARCHAR,nazwa)='" + comboBox2.Text + "';";
             SqlConnection condatabase = new SqlConnection(constring);
             SqlCommand cmddatabase = new SqlCommand(query, condatabase);
             SqlDataReader myreader;
@@ -141,7 +141,7 @@ namespace desktopdb
                 myreader = cmddatabase.ExecuteReader();
                 while (myreader.Read())
                 {
-                    Object sname = myreader.GetValue(myreader.GetOrdinal("ID_klub"));
+                    Object sname = myreader.GetValue(myreader.GetOrdinal("id_klub"));
                     id_klubTextBox.Text = sname.ToString();
                 }
             }

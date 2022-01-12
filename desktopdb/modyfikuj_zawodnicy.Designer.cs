@@ -190,7 +190,7 @@ namespace desktopdb
             this.zawodnikBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.zawodnikBindingNavigator.Name = "zawodnikBindingNavigator";
             this.zawodnikBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.zawodnikBindingNavigator.Size = new System.Drawing.Size(312, 25);
+            this.zawodnikBindingNavigator.Size = new System.Drawing.Size(548, 25);
             this.zawodnikBindingNavigator.TabIndex = 0;
             this.zawodnikBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -322,7 +322,6 @@ namespace desktopdb
             this.id_klubTextBox.Name = "id_klubTextBox";
             this.id_klubTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_klubTextBox.TabIndex = 8;
-            this.id_klubTextBox.Visible = false;
             // 
             // narodowoscTextBox
             // 
@@ -365,7 +364,7 @@ namespace desktopdb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 236);
+            this.ClientSize = new System.Drawing.Size(548, 236);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(imieLabel);
             this.Controls.Add(this.imieTextBox);
