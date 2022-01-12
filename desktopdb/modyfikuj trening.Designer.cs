@@ -30,29 +30,29 @@ namespace desktopdb
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             System.Windows.Forms.Label id_treningLabel;
             System.Windows.Forms.Label id_bazaLabel;
             System.Windows.Forms.Label id_klubLabel;
             System.Windows.Forms.Label obciazenieLabel;
             System.Windows.Forms.Label typ_treninguLabel;
             System.Windows.Forms.Label data_treninguLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.pabDataSet = new desktopdb.pabDataSet();
             this.treningBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.treningTableAdapter = new desktopdb.pabDataSetTableAdapters.treningTableAdapter();
             this.tableAdapterManager = new desktopdb.pabDataSetTableAdapters.TableAdapterManager();
             this.treningBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.treningBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.id_treningTextBox = new System.Windows.Forms.TextBox();
             this.id_bazaTextBox = new System.Windows.Forms.TextBox();
@@ -60,6 +60,8 @@ namespace desktopdb
             this.obciazenieTextBox = new System.Windows.Forms.TextBox();
             this.typ_treninguTextBox = new System.Windows.Forms.TextBox();
             this.data_treninguDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             id_treningLabel = new System.Windows.Forms.Label();
             id_bazaLabel = new System.Windows.Forms.Label();
             id_klubLabel = new System.Windows.Forms.Label();
@@ -71,6 +73,61 @@ namespace desktopdb
             ((System.ComponentModel.ISupportInitialize)(this.treningBindingNavigator)).BeginInit();
             this.treningBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // id_treningLabel
+            // 
+            id_treningLabel.AutoSize = true;
+            id_treningLabel.Location = new System.Drawing.Point(9, 31);
+            id_treningLabel.Name = "id_treningLabel";
+            id_treningLabel.Size = new System.Drawing.Size(53, 13);
+            id_treningLabel.TabIndex = 1;
+            id_treningLabel.Text = "id trening:";
+            // 
+            // id_bazaLabel
+            // 
+            id_bazaLabel.AutoSize = true;
+            id_bazaLabel.Location = new System.Drawing.Point(9, 57);
+            id_bazaLabel.Name = "id_bazaLabel";
+            id_bazaLabel.Size = new System.Drawing.Size(33, 13);
+            id_bazaLabel.TabIndex = 3;
+            id_bazaLabel.Text = "baza:";
+            id_bazaLabel.Click += new System.EventHandler(this.id_bazaLabel_Click);
+            // 
+            // id_klubLabel
+            // 
+            id_klubLabel.AutoSize = true;
+            id_klubLabel.Location = new System.Drawing.Point(9, 83);
+            id_klubLabel.Name = "id_klubLabel";
+            id_klubLabel.Size = new System.Drawing.Size(30, 13);
+            id_klubLabel.TabIndex = 5;
+            id_klubLabel.Text = "klub:";
+            // 
+            // obciazenieLabel
+            // 
+            obciazenieLabel.AutoSize = true;
+            obciazenieLabel.Location = new System.Drawing.Point(9, 109);
+            obciazenieLabel.Name = "obciazenieLabel";
+            obciazenieLabel.Size = new System.Drawing.Size(61, 13);
+            obciazenieLabel.TabIndex = 7;
+            obciazenieLabel.Text = "obciazenie:";
+            // 
+            // typ_treninguLabel
+            // 
+            typ_treninguLabel.AutoSize = true;
+            typ_treninguLabel.Location = new System.Drawing.Point(9, 135);
+            typ_treninguLabel.Name = "typ_treninguLabel";
+            typ_treninguLabel.Size = new System.Drawing.Size(65, 13);
+            typ_treninguLabel.TabIndex = 9;
+            typ_treninguLabel.Text = "typ treningu:";
+            // 
+            // data_treninguLabel
+            // 
+            data_treninguLabel.AutoSize = true;
+            data_treninguLabel.Location = new System.Drawing.Point(9, 162);
+            data_treninguLabel.Name = "data_treninguLabel";
+            data_treninguLabel.Size = new System.Drawing.Size(72, 13);
+            data_treninguLabel.TabIndex = 11;
+            data_treninguLabel.Text = "data treningu:";
             // 
             // pabDataSet
             // 
@@ -123,9 +180,34 @@ namespace desktopdb
             this.treningBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.treningBindingNavigator.Name = "treningBindingNavigator";
             this.treningBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.treningBindingNavigator.Size = new System.Drawing.Size(493, 25);
+            this.treningBindingNavigator.Size = new System.Drawing.Size(307, 25);
             this.treningBindingNavigator.TabIndex = 0;
             this.treningBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -154,22 +236,16 @@ namespace desktopdb
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -177,7 +253,7 @@ namespace desktopdb
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -186,151 +262,109 @@ namespace desktopdb
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // treningBindingNavigatorSaveItem
             // 
             this.treningBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.treningBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("treningBindingNavigatorSaveItem.Image")));
             this.treningBindingNavigatorSaveItem.Name = "treningBindingNavigatorSaveItem";
-            this.treningBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.treningBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.treningBindingNavigatorSaveItem.Text = "Save Data";
             this.treningBindingNavigatorSaveItem.Click += new System.EventHandler(this.treningBindingNavigatorSaveItem_Click);
-            // 
-            // id_treningLabel
-            // 
-            id_treningLabel.AutoSize = true;
-            id_treningLabel.Location = new System.Drawing.Point(12, 25);
-            id_treningLabel.Name = "id_treningLabel";
-            id_treningLabel.Size = new System.Drawing.Size(53, 13);
-            id_treningLabel.TabIndex = 1;
-            id_treningLabel.Text = "id trening:";
             // 
             // id_treningTextBox
             // 
             this.id_treningTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.treningBindingSource, "id_trening", true));
             this.id_treningTextBox.Enabled = false;
-            this.id_treningTextBox.Location = new System.Drawing.Point(90, 22);
+            this.id_treningTextBox.Location = new System.Drawing.Point(87, 28);
             this.id_treningTextBox.Name = "id_treningTextBox";
             this.id_treningTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_treningTextBox.TabIndex = 2;
-            // 
-            // id_bazaLabel
-            // 
-            id_bazaLabel.AutoSize = true;
-            id_bazaLabel.Location = new System.Drawing.Point(12, 51);
-            id_bazaLabel.Name = "id_bazaLabel";
-            id_bazaLabel.Size = new System.Drawing.Size(44, 13);
-            id_bazaLabel.TabIndex = 3;
-            id_bazaLabel.Text = "id baza:";
             // 
             // id_bazaTextBox
             // 
             this.id_bazaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.treningBindingSource, "id_baza", true));
             this.id_bazaTextBox.Enabled = false;
-            this.id_bazaTextBox.Location = new System.Drawing.Point(90, 48);
+            this.id_bazaTextBox.Location = new System.Drawing.Point(307, 56);
             this.id_bazaTextBox.Name = "id_bazaTextBox";
             this.id_bazaTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_bazaTextBox.TabIndex = 4;
-            // 
-            // id_klubLabel
-            // 
-            id_klubLabel.AutoSize = true;
-            id_klubLabel.Location = new System.Drawing.Point(12, 77);
-            id_klubLabel.Name = "id_klubLabel";
-            id_klubLabel.Size = new System.Drawing.Size(41, 13);
-            id_klubLabel.TabIndex = 5;
-            id_klubLabel.Text = "id klub:";
+            this.id_bazaTextBox.Visible = false;
             // 
             // id_klubTextBox
             // 
             this.id_klubTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.treningBindingSource, "id_klub", true));
             this.id_klubTextBox.Enabled = false;
-            this.id_klubTextBox.Location = new System.Drawing.Point(90, 74);
+            this.id_klubTextBox.Location = new System.Drawing.Point(307, 82);
             this.id_klubTextBox.Name = "id_klubTextBox";
             this.id_klubTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_klubTextBox.TabIndex = 6;
-            // 
-            // obciazenieLabel
-            // 
-            obciazenieLabel.AutoSize = true;
-            obciazenieLabel.Location = new System.Drawing.Point(12, 103);
-            obciazenieLabel.Name = "obciazenieLabel";
-            obciazenieLabel.Size = new System.Drawing.Size(61, 13);
-            obciazenieLabel.TabIndex = 7;
-            obciazenieLabel.Text = "obciazenie:";
+            this.id_klubTextBox.Visible = false;
             // 
             // obciazenieTextBox
             // 
             this.obciazenieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.treningBindingSource, "obciazenie", true));
-            this.obciazenieTextBox.Location = new System.Drawing.Point(90, 100);
+            this.obciazenieTextBox.Location = new System.Drawing.Point(87, 106);
             this.obciazenieTextBox.Name = "obciazenieTextBox";
             this.obciazenieTextBox.Size = new System.Drawing.Size(200, 20);
             this.obciazenieTextBox.TabIndex = 8;
             // 
-            // typ_treninguLabel
-            // 
-            typ_treninguLabel.AutoSize = true;
-            typ_treninguLabel.Location = new System.Drawing.Point(12, 129);
-            typ_treninguLabel.Name = "typ_treninguLabel";
-            typ_treninguLabel.Size = new System.Drawing.Size(65, 13);
-            typ_treninguLabel.TabIndex = 9;
-            typ_treninguLabel.Text = "typ treningu:";
-            // 
             // typ_treninguTextBox
             // 
             this.typ_treninguTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.treningBindingSource, "typ_treningu", true));
-            this.typ_treninguTextBox.Location = new System.Drawing.Point(90, 126);
+            this.typ_treninguTextBox.Location = new System.Drawing.Point(87, 132);
             this.typ_treninguTextBox.Name = "typ_treninguTextBox";
             this.typ_treninguTextBox.Size = new System.Drawing.Size(200, 20);
             this.typ_treninguTextBox.TabIndex = 10;
             // 
-            // data_treninguLabel
-            // 
-            data_treninguLabel.AutoSize = true;
-            data_treninguLabel.Location = new System.Drawing.Point(12, 156);
-            data_treninguLabel.Name = "data_treninguLabel";
-            data_treninguLabel.Size = new System.Drawing.Size(72, 13);
-            data_treninguLabel.TabIndex = 11;
-            data_treninguLabel.Text = "data treningu:";
-            // 
             // data_treninguDateTimePicker
             // 
             this.data_treninguDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.treningBindingSource, "data_treningu", true));
-            this.data_treninguDateTimePicker.Location = new System.Drawing.Point(90, 152);
+            this.data_treninguDateTimePicker.Location = new System.Drawing.Point(87, 158);
             this.data_treninguDateTimePicker.Name = "data_treninguDateTimePicker";
             this.data_treninguDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.data_treninguDateTimePicker.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 16;
+            this.comboBox1.Location = new System.Drawing.Point(87, 52);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.Text = "Wybierz";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.ItemHeight = 16;
+            this.comboBox2.Location = new System.Drawing.Point(87, 77);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(200, 24);
+            this.comboBox2.TabIndex = 32;
+            this.comboBox2.Text = "Wybierz";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 212);
+            this.ClientSize = new System.Drawing.Size(307, 221);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(id_treningLabel);
             this.Controls.Add(this.id_treningTextBox);
             this.Controls.Add(id_bazaLabel);
@@ -344,7 +378,7 @@ namespace desktopdb
             this.Controls.Add(data_treninguLabel);
             this.Controls.Add(this.data_treninguDateTimePicker);
             this.Controls.Add(this.treningBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form5";
             this.Text = "Form5";
             this.Load += new System.EventHandler(this.Form5_Load);
@@ -383,5 +417,7 @@ namespace desktopdb
         private System.Windows.Forms.TextBox obciazenieTextBox;
         private System.Windows.Forms.TextBox typ_treninguTextBox;
         private System.Windows.Forms.DateTimePicker data_treninguDateTimePicker;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

@@ -30,7 +30,6 @@ namespace desktopdb
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modyfikuj_zawodnicy));
             System.Windows.Forms.Label imieLabel;
             System.Windows.Forms.Label nazwiskoLabel;
             System.Windows.Forms.Label id_zawodnikLabel;
@@ -38,22 +37,23 @@ namespace desktopdb
             System.Windows.Forms.Label narodowoscLabel;
             System.Windows.Forms.Label pozycjaLabel;
             System.Windows.Forms.Label data_urodzenieLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modyfikuj_zawodnicy));
             this.pabDataSet = new desktopdb.pabDataSet();
             this.zawodnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zawodnikTableAdapter = new desktopdb.pabDataSetTableAdapters.ZawodnikTableAdapter();
             this.tableAdapterManager = new desktopdb.pabDataSetTableAdapters.TableAdapterManager();
             this.zawodnikBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.zawodnikBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.imieTextBox = new System.Windows.Forms.TextBox();
             this.nazwiskoTextBox = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@ namespace desktopdb
             this.narodowoscTextBox = new System.Windows.Forms.TextBox();
             this.pozycjaTextBox = new System.Windows.Forms.TextBox();
             this.data_urodzenieDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             imieLabel = new System.Windows.Forms.Label();
             nazwiskoLabel = new System.Windows.Forms.Label();
             id_zawodnikLabel = new System.Windows.Forms.Label();
@@ -74,6 +75,69 @@ namespace desktopdb
             ((System.ComponentModel.ISupportInitialize)(this.zawodnikBindingNavigator)).BeginInit();
             this.zawodnikBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // imieLabel
+            // 
+            imieLabel.AutoSize = true;
+            imieLabel.Location = new System.Drawing.Point(12, 65);
+            imieLabel.Name = "imieLabel";
+            imieLabel.Size = new System.Drawing.Size(28, 13);
+            imieLabel.TabIndex = 1;
+            imieLabel.Text = "imie:";
+            // 
+            // nazwiskoLabel
+            // 
+            nazwiskoLabel.AutoSize = true;
+            nazwiskoLabel.Location = new System.Drawing.Point(12, 91);
+            nazwiskoLabel.Name = "nazwiskoLabel";
+            nazwiskoLabel.Size = new System.Drawing.Size(54, 13);
+            nazwiskoLabel.TabIndex = 3;
+            nazwiskoLabel.Text = "nazwisko:";
+            // 
+            // id_zawodnikLabel
+            // 
+            id_zawodnikLabel.AutoSize = true;
+            id_zawodnikLabel.Location = new System.Drawing.Point(12, 31);
+            id_zawodnikLabel.Name = "id_zawodnikLabel";
+            id_zawodnikLabel.Size = new System.Drawing.Size(66, 13);
+            id_zawodnikLabel.TabIndex = 5;
+            id_zawodnikLabel.Text = "id zawodnik:";
+            // 
+            // id_klubLabel
+            // 
+            id_klubLabel.AutoSize = true;
+            id_klubLabel.Location = new System.Drawing.Point(12, 117);
+            id_klubLabel.Name = "id_klubLabel";
+            id_klubLabel.Size = new System.Drawing.Size(30, 13);
+            id_klubLabel.TabIndex = 7;
+            id_klubLabel.Text = "klub:";
+            // 
+            // narodowoscLabel
+            // 
+            narodowoscLabel.AutoSize = true;
+            narodowoscLabel.Location = new System.Drawing.Point(12, 143);
+            narodowoscLabel.Name = "narodowoscLabel";
+            narodowoscLabel.Size = new System.Drawing.Size(68, 13);
+            narodowoscLabel.TabIndex = 9;
+            narodowoscLabel.Text = "narodowosc:";
+            // 
+            // pozycjaLabel
+            // 
+            pozycjaLabel.AutoSize = true;
+            pozycjaLabel.Location = new System.Drawing.Point(12, 169);
+            pozycjaLabel.Name = "pozycjaLabel";
+            pozycjaLabel.Size = new System.Drawing.Size(46, 13);
+            pozycjaLabel.TabIndex = 11;
+            pozycjaLabel.Text = "pozycja:";
+            // 
+            // data_urodzenieLabel
+            // 
+            data_urodzenieLabel.AutoSize = true;
+            data_urodzenieLabel.Location = new System.Drawing.Point(12, 196);
+            data_urodzenieLabel.Name = "data_urodzenieLabel";
+            data_urodzenieLabel.Size = new System.Drawing.Size(80, 13);
+            data_urodzenieLabel.TabIndex = 13;
+            data_urodzenieLabel.Text = "data urodzenie:";
             // 
             // pabDataSet
             // 
@@ -126,9 +190,34 @@ namespace desktopdb
             this.zawodnikBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.zawodnikBindingNavigator.Name = "zawodnikBindingNavigator";
             this.zawodnikBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.zawodnikBindingNavigator.Size = new System.Drawing.Size(626, 25);
+            this.zawodnikBindingNavigator.Size = new System.Drawing.Size(312, 25);
             this.zawodnikBindingNavigator.TabIndex = 0;
             this.zawodnikBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -157,22 +246,16 @@ namespace desktopdb
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -180,7 +263,7 @@ namespace desktopdb
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -189,119 +272,57 @@ namespace desktopdb
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // zawodnikBindingNavigatorSaveItem
             // 
             this.zawodnikBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.zawodnikBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("zawodnikBindingNavigatorSaveItem.Image")));
             this.zawodnikBindingNavigatorSaveItem.Name = "zawodnikBindingNavigatorSaveItem";
-            this.zawodnikBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.zawodnikBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.zawodnikBindingNavigatorSaveItem.Text = "Save Data";
             this.zawodnikBindingNavigatorSaveItem.Click += new System.EventHandler(this.zawodnikBindingNavigatorSaveItem_Click);
-            // 
-            // imieLabel
-            // 
-            imieLabel.AutoSize = true;
-            imieLabel.Location = new System.Drawing.Point(12, 39);
-            imieLabel.Name = "imieLabel";
-            imieLabel.Size = new System.Drawing.Size(28, 13);
-            imieLabel.TabIndex = 1;
-            imieLabel.Text = "imie:";
             // 
             // imieTextBox
             // 
             this.imieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zawodnikBindingSource, "imie", true));
-            this.imieTextBox.Location = new System.Drawing.Point(98, 36);
+            this.imieTextBox.Location = new System.Drawing.Point(98, 62);
             this.imieTextBox.Name = "imieTextBox";
             this.imieTextBox.Size = new System.Drawing.Size(200, 20);
             this.imieTextBox.TabIndex = 2;
             // 
-            // nazwiskoLabel
-            // 
-            nazwiskoLabel.AutoSize = true;
-            nazwiskoLabel.Location = new System.Drawing.Point(12, 65);
-            nazwiskoLabel.Name = "nazwiskoLabel";
-            nazwiskoLabel.Size = new System.Drawing.Size(54, 13);
-            nazwiskoLabel.TabIndex = 3;
-            nazwiskoLabel.Text = "nazwisko:";
-            // 
             // nazwiskoTextBox
             // 
             this.nazwiskoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zawodnikBindingSource, "nazwisko", true));
-            this.nazwiskoTextBox.Location = new System.Drawing.Point(98, 62);
+            this.nazwiskoTextBox.Location = new System.Drawing.Point(98, 88);
             this.nazwiskoTextBox.Name = "nazwiskoTextBox";
             this.nazwiskoTextBox.Size = new System.Drawing.Size(200, 20);
             this.nazwiskoTextBox.TabIndex = 4;
-            // 
-            // id_zawodnikLabel
-            // 
-            id_zawodnikLabel.AutoSize = true;
-            id_zawodnikLabel.Location = new System.Drawing.Point(12, 91);
-            id_zawodnikLabel.Name = "id_zawodnikLabel";
-            id_zawodnikLabel.Size = new System.Drawing.Size(66, 13);
-            id_zawodnikLabel.TabIndex = 5;
-            id_zawodnikLabel.Text = "id zawodnik:";
             // 
             // id_zawodnikTextBox
             // 
             this.id_zawodnikTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zawodnikBindingSource, "id_zawodnik", true));
             this.id_zawodnikTextBox.Enabled = false;
-            this.id_zawodnikTextBox.Location = new System.Drawing.Point(98, 88);
+            this.id_zawodnikTextBox.Location = new System.Drawing.Point(98, 28);
             this.id_zawodnikTextBox.Name = "id_zawodnikTextBox";
             this.id_zawodnikTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_zawodnikTextBox.TabIndex = 6;
-            // 
-            // id_klubLabel
-            // 
-            id_klubLabel.AutoSize = true;
-            id_klubLabel.Location = new System.Drawing.Point(12, 117);
-            id_klubLabel.Name = "id_klubLabel";
-            id_klubLabel.Size = new System.Drawing.Size(41, 13);
-            id_klubLabel.TabIndex = 7;
-            id_klubLabel.Text = "id klub:";
             // 
             // id_klubTextBox
             // 
             this.id_klubTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zawodnikBindingSource, "id_klub", true));
             this.id_klubTextBox.Enabled = false;
-            this.id_klubTextBox.Location = new System.Drawing.Point(98, 114);
+            this.id_klubTextBox.Location = new System.Drawing.Point(312, 117);
             this.id_klubTextBox.Name = "id_klubTextBox";
             this.id_klubTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_klubTextBox.TabIndex = 8;
-            // 
-            // narodowoscLabel
-            // 
-            narodowoscLabel.AutoSize = true;
-            narodowoscLabel.Location = new System.Drawing.Point(12, 143);
-            narodowoscLabel.Name = "narodowoscLabel";
-            narodowoscLabel.Size = new System.Drawing.Size(68, 13);
-            narodowoscLabel.TabIndex = 9;
-            narodowoscLabel.Text = "narodowosc:";
+            this.id_klubTextBox.Visible = false;
             // 
             // narodowoscTextBox
             // 
@@ -311,15 +332,6 @@ namespace desktopdb
             this.narodowoscTextBox.Size = new System.Drawing.Size(200, 20);
             this.narodowoscTextBox.TabIndex = 10;
             // 
-            // pozycjaLabel
-            // 
-            pozycjaLabel.AutoSize = true;
-            pozycjaLabel.Location = new System.Drawing.Point(12, 169);
-            pozycjaLabel.Name = "pozycjaLabel";
-            pozycjaLabel.Size = new System.Drawing.Size(46, 13);
-            pozycjaLabel.TabIndex = 11;
-            pozycjaLabel.Text = "pozycja:";
-            // 
             // pozycjaTextBox
             // 
             this.pozycjaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zawodnikBindingSource, "pozycja", true));
@@ -327,15 +339,6 @@ namespace desktopdb
             this.pozycjaTextBox.Name = "pozycjaTextBox";
             this.pozycjaTextBox.Size = new System.Drawing.Size(200, 20);
             this.pozycjaTextBox.TabIndex = 12;
-            // 
-            // data_urodzenieLabel
-            // 
-            data_urodzenieLabel.AutoSize = true;
-            data_urodzenieLabel.Location = new System.Drawing.Point(12, 196);
-            data_urodzenieLabel.Name = "data_urodzenieLabel";
-            data_urodzenieLabel.Size = new System.Drawing.Size(80, 13);
-            data_urodzenieLabel.TabIndex = 13;
-            data_urodzenieLabel.Text = "data urodzenie:";
             // 
             // data_urodzenieDateTimePicker
             // 
@@ -345,11 +348,25 @@ namespace desktopdb
             this.data_urodzenieDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.data_urodzenieDateTimePicker.TabIndex = 14;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 13;
+            this.comboBox1.Location = new System.Drawing.Point(98, 114);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.Text = "Wybierz";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // modyfikuj_zawodnicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 266);
+            this.ClientSize = new System.Drawing.Size(312, 236);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(imieLabel);
             this.Controls.Add(this.imieTextBox);
             this.Controls.Add(nazwiskoLabel);
@@ -367,7 +384,7 @@ namespace desktopdb
             this.Controls.Add(this.zawodnikBindingNavigator);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "modyfikuj_zawodnicy";
-            this.Text = "Form7";
+            this.Text = "Zawodnik";
             this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pabDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zawodnikBindingSource)).EndInit();
@@ -405,5 +422,6 @@ namespace desktopdb
         private System.Windows.Forms.TextBox narodowoscTextBox;
         private System.Windows.Forms.TextBox pozycjaTextBox;
         private System.Windows.Forms.DateTimePicker data_urodzenieDateTimePicker;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

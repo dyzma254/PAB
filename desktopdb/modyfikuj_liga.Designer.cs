@@ -58,7 +58,6 @@ namespace desktopdb
             this.krajTextBox = new System.Windows.Forms.TextBox();
             this.czy_grupyCheckBox = new System.Windows.Forms.CheckBox();
             this.czy_playofyCheckBox = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             id_ligaLabel = new System.Windows.Forms.Label();
             nazwaLabel = new System.Windows.Forms.Label();
             krajLabel = new System.Windows.Forms.Label();
@@ -166,7 +165,7 @@ namespace desktopdb
             this.ligaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.ligaBindingNavigator.Name = "ligaBindingNavigator";
             this.ligaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ligaBindingNavigator.Size = new System.Drawing.Size(435, 25);
+            this.ligaBindingNavigator.Size = new System.Drawing.Size(302, 25);
             this.ligaBindingNavigator.TabIndex = 0;
             this.ligaBindingNavigator.Text = "bindingNavigator1";
             this.ligaBindingNavigator.RefreshItems += new System.EventHandler(this.ligaBindingNavigator_RefreshItems);
@@ -223,7 +222,6 @@ namespace desktopdb
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -311,25 +309,11 @@ namespace desktopdb
             this.czy_playofyCheckBox.Text = "Tak";
             this.czy_playofyCheckBox.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 16;
-            this.comboBox1.Location = new System.Drawing.Point(250, 69);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 24);
-            this.comboBox1.TabIndex = 30;
-            this.comboBox1.Text = "Wybierz";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
-            // 
             // modyfikuj_liga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 309);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(302, 235);
             this.Controls.Add(id_ligaLabel);
             this.Controls.Add(this.id_ligaTextBox);
             this.Controls.Add(nazwaLabel);
@@ -343,7 +327,7 @@ namespace desktopdb
             this.Controls.Add(this.ligaBindingNavigator);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "modyfikuj_liga";
-            this.Text = "Form10";
+            this.Text = "Liga";
             this.Load += new System.EventHandler(this.Form10_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pabDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ligaBindingSource)).EndInit();
@@ -379,6 +363,5 @@ namespace desktopdb
         private System.Windows.Forms.TextBox krajTextBox;
         private System.Windows.Forms.CheckBox czy_grupyCheckBox;
         private System.Windows.Forms.CheckBox czy_playofyCheckBox;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

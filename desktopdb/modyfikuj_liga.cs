@@ -16,35 +16,12 @@ namespace desktopdb
         public modyfikuj_liga()
         {
             InitializeComponent();
-            Fillcombo1();           
+                     
             sprawdz1();
             sprawdz2();
         }
 
-        void Fillcombo1()
-        {
-            string constring = "Data Source=DYZMA-KOMPUTER;Initial Catalog=pab;Integrated Security=True";
-            string query = "select * from Liga";
-            SqlConnection condatabase = new SqlConnection(constring);
-            SqlCommand cmddatabase = new SqlCommand(query, condatabase);
-            SqlDataReader myreader;
-            try
-            {
-                condatabase.Open();
-                myreader = cmddatabase.ExecuteReader();
-                while (myreader.Read())
-                {
-                    string sname = myreader.GetString(myreader.GetOrdinal("nazwa"));
-                    comboBox1.Items.Add(sname);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-        }
-
+       
        
      
         private void Form10_Load(object sender, EventArgs e)
@@ -54,36 +31,7 @@ namespace desktopdb
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string constring = "Data Source=DYZMA-KOMPUTER;Initial Catalog=pab;Integrated Security=True";
-            string query = "select * from Liga where CONVERT(VARCHAR,nazwa)='" + comboBox1.Text + "';";
-            SqlConnection condatabase = new SqlConnection(constring);
-            SqlCommand cmddatabase = new SqlCommand(query, condatabase);
-            SqlDataReader myreader;
-            try
-            {
-                condatabase.Open();
-                myreader = cmddatabase.ExecuteReader();
-                while (myreader.Read())
-                {
-                    Object sname = myreader.GetValue(myreader.GetOrdinal("ID_Ligi"));
-                    id_ligaTextBox.Text = sname.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void iD_ModeluTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
+      
         
         void sprawdz1()
         {
@@ -97,10 +45,7 @@ namespace desktopdb
             }
         }
 
-        private void powypadkowyCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            sprawdz1();
-        }
+      
         
         void sprawdz2()
         {
@@ -114,10 +59,7 @@ namespace desktopdb
             }
         }
 
-        private void rezerwacjaCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            sprawdz2();
-        }
+       
 
         private void ligaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -127,10 +69,7 @@ namespace desktopdb
 
         }
 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void ligaBindingNavigator_RefreshItems(object sender, EventArgs e)
         {

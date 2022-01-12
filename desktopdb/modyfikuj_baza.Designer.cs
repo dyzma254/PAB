@@ -30,27 +30,27 @@ namespace desktopdb
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modyfikuj_baza));
             System.Windows.Forms.Label id_bazaLabel;
             System.Windows.Forms.Label miastoLabel;
             System.Windows.Forms.Label nazwaLabel;
             System.Windows.Forms.Label zadaszenieLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modyfikuj_baza));
             this.pabDataSet = new desktopdb.pabDataSet();
             this.baza_treningowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.baza_treningowaTableAdapter = new desktopdb.pabDataSetTableAdapters.baza_treningowaTableAdapter();
             this.tableAdapterManager = new desktopdb.pabDataSetTableAdapters.TableAdapterManager();
             this.baza_treningowaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.baza_treningowaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.id_bazaTextBox = new System.Windows.Forms.TextBox();
             this.miastoTextBox = new System.Windows.Forms.TextBox();
@@ -65,6 +65,42 @@ namespace desktopdb
             ((System.ComponentModel.ISupportInitialize)(this.baza_treningowaBindingNavigator)).BeginInit();
             this.baza_treningowaBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // id_bazaLabel
+            // 
+            id_bazaLabel.AutoSize = true;
+            id_bazaLabel.Location = new System.Drawing.Point(62, 31);
+            id_bazaLabel.Name = "id_bazaLabel";
+            id_bazaLabel.Size = new System.Drawing.Size(44, 13);
+            id_bazaLabel.TabIndex = 1;
+            id_bazaLabel.Text = "id baza:";
+            // 
+            // miastoLabel
+            // 
+            miastoLabel.AutoSize = true;
+            miastoLabel.Location = new System.Drawing.Point(62, 57);
+            miastoLabel.Name = "miastoLabel";
+            miastoLabel.Size = new System.Drawing.Size(40, 13);
+            miastoLabel.TabIndex = 3;
+            miastoLabel.Text = "miasto:";
+            // 
+            // nazwaLabel
+            // 
+            nazwaLabel.AutoSize = true;
+            nazwaLabel.Location = new System.Drawing.Point(62, 83);
+            nazwaLabel.Name = "nazwaLabel";
+            nazwaLabel.Size = new System.Drawing.Size(41, 13);
+            nazwaLabel.TabIndex = 5;
+            nazwaLabel.Text = "nazwa:";
+            // 
+            // zadaszenieLabel
+            // 
+            zadaszenieLabel.AutoSize = true;
+            zadaszenieLabel.Location = new System.Drawing.Point(62, 111);
+            zadaszenieLabel.Name = "zadaszenieLabel";
+            zadaszenieLabel.Size = new System.Drawing.Size(63, 13);
+            zadaszenieLabel.TabIndex = 7;
+            zadaszenieLabel.Text = "zadaszenie:";
             // 
             // pabDataSet
             // 
@@ -117,9 +153,34 @@ namespace desktopdb
             this.baza_treningowaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.baza_treningowaBindingNavigator.Name = "baza_treningowaBindingNavigator";
             this.baza_treningowaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.baza_treningowaBindingNavigator.Size = new System.Drawing.Size(592, 25);
+            this.baza_treningowaBindingNavigator.Size = new System.Drawing.Size(309, 25);
             this.baza_treningowaBindingNavigator.TabIndex = 0;
             this.baza_treningowaBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -148,22 +209,16 @@ namespace desktopdb
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -171,7 +226,7 @@ namespace desktopdb
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -180,116 +235,64 @@ namespace desktopdb
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // baza_treningowaBindingNavigatorSaveItem
             // 
             this.baza_treningowaBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.baza_treningowaBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("baza_treningowaBindingNavigatorSaveItem.Image")));
             this.baza_treningowaBindingNavigatorSaveItem.Name = "baza_treningowaBindingNavigatorSaveItem";
-            this.baza_treningowaBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.baza_treningowaBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.baza_treningowaBindingNavigatorSaveItem.Text = "Save Data";
             this.baza_treningowaBindingNavigatorSaveItem.Click += new System.EventHandler(this.baza_treningowaBindingNavigatorSaveItem_Click);
-            // 
-            // id_bazaLabel
-            // 
-            id_bazaLabel.AutoSize = true;
-            id_bazaLabel.Location = new System.Drawing.Point(12, 39);
-            id_bazaLabel.Name = "id_bazaLabel";
-            id_bazaLabel.Size = new System.Drawing.Size(44, 13);
-            id_bazaLabel.TabIndex = 1;
-            id_bazaLabel.Text = "id baza:";
             // 
             // id_bazaTextBox
             // 
             this.id_bazaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.baza_treningowaBindingSource, "id_baza", true));
-            this.id_bazaTextBox.Location = new System.Drawing.Point(81, 36);
+            this.id_bazaTextBox.Enabled = false;
+            this.id_bazaTextBox.Location = new System.Drawing.Point(131, 28);
             this.id_bazaTextBox.Name = "id_bazaTextBox";
             this.id_bazaTextBox.Size = new System.Drawing.Size(104, 20);
             this.id_bazaTextBox.TabIndex = 2;
             // 
-            // miastoLabel
-            // 
-            miastoLabel.AutoSize = true;
-            miastoLabel.Location = new System.Drawing.Point(12, 65);
-            miastoLabel.Name = "miastoLabel";
-            miastoLabel.Size = new System.Drawing.Size(40, 13);
-            miastoLabel.TabIndex = 3;
-            miastoLabel.Text = "miasto:";
-            // 
             // miastoTextBox
             // 
             this.miastoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.baza_treningowaBindingSource, "miasto", true));
-            this.miastoTextBox.Location = new System.Drawing.Point(81, 62);
+            this.miastoTextBox.Location = new System.Drawing.Point(131, 54);
             this.miastoTextBox.Name = "miastoTextBox";
             this.miastoTextBox.Size = new System.Drawing.Size(104, 20);
             this.miastoTextBox.TabIndex = 4;
             // 
-            // nazwaLabel
-            // 
-            nazwaLabel.AutoSize = true;
-            nazwaLabel.Location = new System.Drawing.Point(12, 91);
-            nazwaLabel.Name = "nazwaLabel";
-            nazwaLabel.Size = new System.Drawing.Size(41, 13);
-            nazwaLabel.TabIndex = 5;
-            nazwaLabel.Text = "nazwa:";
-            // 
             // nazwaTextBox
             // 
             this.nazwaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.baza_treningowaBindingSource, "nazwa", true));
-            this.nazwaTextBox.Location = new System.Drawing.Point(81, 88);
+            this.nazwaTextBox.Location = new System.Drawing.Point(131, 80);
             this.nazwaTextBox.Name = "nazwaTextBox";
             this.nazwaTextBox.Size = new System.Drawing.Size(104, 20);
             this.nazwaTextBox.TabIndex = 6;
             // 
-            // zadaszenieLabel
-            // 
-            zadaszenieLabel.AutoSize = true;
-            zadaszenieLabel.Location = new System.Drawing.Point(12, 119);
-            zadaszenieLabel.Name = "zadaszenieLabel";
-            zadaszenieLabel.Size = new System.Drawing.Size(63, 13);
-            zadaszenieLabel.TabIndex = 7;
-            zadaszenieLabel.Text = "zadaszenie:";
-            // 
             // zadaszenieCheckBox
             // 
             this.zadaszenieCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.baza_treningowaBindingSource, "zadaszenie", true));
-            this.zadaszenieCheckBox.Location = new System.Drawing.Point(81, 114);
+            this.zadaszenieCheckBox.Location = new System.Drawing.Point(131, 106);
             this.zadaszenieCheckBox.Name = "zadaszenieCheckBox";
             this.zadaszenieCheckBox.Size = new System.Drawing.Size(104, 24);
             this.zadaszenieCheckBox.TabIndex = 8;
-            this.zadaszenieCheckBox.Text = "checkBox1";
+            this.zadaszenieCheckBox.Text = "tak";
             this.zadaszenieCheckBox.UseVisualStyleBackColor = true;
+            this.zadaszenieCheckBox.CheckedChanged += new System.EventHandler(this.zadaszenieCheckBox_CheckedChanged);
             // 
             // modyfikuj_baza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 243);
+            this.ClientSize = new System.Drawing.Size(309, 155);
             this.Controls.Add(id_bazaLabel);
             this.Controls.Add(this.id_bazaTextBox);
             this.Controls.Add(miastoLabel);
@@ -301,7 +304,7 @@ namespace desktopdb
             this.Controls.Add(this.baza_treningowaBindingNavigator);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "modyfikuj_baza";
-            this.Text = "Form6";
+            this.Text = "Baza treningowa";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pabDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baza_treningowaBindingSource)).EndInit();

@@ -97,6 +97,11 @@ namespace desktopdb
             this.tableAdapterManager.UpdateAll(this.pabDataSet);
 
         }
+
+        private void zadaszenieCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
         /*
 if (iD_MarkiComboBox.SelectedIndex == -1)
 {

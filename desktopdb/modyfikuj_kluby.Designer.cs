@@ -30,7 +30,6 @@ namespace desktopdb
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modyfikuj_kluby));
             System.Windows.Forms.Label id_klubLabel;
             System.Windows.Forms.Label id_ligaLabel;
             System.Windows.Forms.Label nazwaLabel;
@@ -38,22 +37,23 @@ namespace desktopdb
             System.Windows.Forms.Label ile_tytulowLabel;
             System.Windows.Forms.Label data_zalozeniaLabel;
             System.Windows.Forms.Label miastoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modyfikuj_kluby));
             this.pabDataSet = new desktopdb.pabDataSet();
             this.klubBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.klubTableAdapter = new desktopdb.pabDataSetTableAdapters.KlubTableAdapter();
             this.tableAdapterManager = new desktopdb.pabDataSetTableAdapters.TableAdapterManager();
             this.klubBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.klubBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.id_klubTextBox = new System.Windows.Forms.TextBox();
             this.id_ligaTextBox = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@ namespace desktopdb
             this.ile_tytulowTextBox = new System.Windows.Forms.TextBox();
             this.data_zalozeniaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.miastoTextBox = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             id_klubLabel = new System.Windows.Forms.Label();
             id_ligaLabel = new System.Windows.Forms.Label();
             nazwaLabel = new System.Windows.Forms.Label();
@@ -74,6 +75,69 @@ namespace desktopdb
             ((System.ComponentModel.ISupportInitialize)(this.klubBindingNavigator)).BeginInit();
             this.klubBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // id_klubLabel
+            // 
+            id_klubLabel.AutoSize = true;
+            id_klubLabel.Location = new System.Drawing.Point(12, 40);
+            id_klubLabel.Name = "id_klubLabel";
+            id_klubLabel.Size = new System.Drawing.Size(41, 13);
+            id_klubLabel.TabIndex = 1;
+            id_klubLabel.Text = "id klub:";
+            // 
+            // id_ligaLabel
+            // 
+            id_ligaLabel.AutoSize = true;
+            id_ligaLabel.Location = new System.Drawing.Point(12, 66);
+            id_ligaLabel.Name = "id_ligaLabel";
+            id_ligaLabel.Size = new System.Drawing.Size(27, 13);
+            id_ligaLabel.TabIndex = 3;
+            id_ligaLabel.Text = "Liga";
+            // 
+            // nazwaLabel
+            // 
+            nazwaLabel.AutoSize = true;
+            nazwaLabel.Location = new System.Drawing.Point(12, 92);
+            nazwaLabel.Name = "nazwaLabel";
+            nazwaLabel.Size = new System.Drawing.Size(41, 13);
+            nazwaLabel.TabIndex = 5;
+            nazwaLabel.Text = "nazwa:";
+            // 
+            // krajLabel
+            // 
+            krajLabel.AutoSize = true;
+            krajLabel.Location = new System.Drawing.Point(12, 118);
+            krajLabel.Name = "krajLabel";
+            krajLabel.Size = new System.Drawing.Size(27, 13);
+            krajLabel.TabIndex = 7;
+            krajLabel.Text = "kraj:";
+            // 
+            // ile_tytulowLabel
+            // 
+            ile_tytulowLabel.AutoSize = true;
+            ile_tytulowLabel.Location = new System.Drawing.Point(12, 144);
+            ile_tytulowLabel.Name = "ile_tytulowLabel";
+            ile_tytulowLabel.Size = new System.Drawing.Size(56, 13);
+            ile_tytulowLabel.TabIndex = 9;
+            ile_tytulowLabel.Text = "ile tytulow:";
+            // 
+            // data_zalozeniaLabel
+            // 
+            data_zalozeniaLabel.AutoSize = true;
+            data_zalozeniaLabel.Location = new System.Drawing.Point(12, 171);
+            data_zalozeniaLabel.Name = "data_zalozeniaLabel";
+            data_zalozeniaLabel.Size = new System.Drawing.Size(78, 13);
+            data_zalozeniaLabel.TabIndex = 11;
+            data_zalozeniaLabel.Text = "data zalozenia:";
+            // 
+            // miastoLabel
+            // 
+            miastoLabel.AutoSize = true;
+            miastoLabel.Location = new System.Drawing.Point(12, 196);
+            miastoLabel.Name = "miastoLabel";
+            miastoLabel.Size = new System.Drawing.Size(40, 13);
+            miastoLabel.TabIndex = 13;
+            miastoLabel.Text = "miasto:";
             // 
             // pabDataSet
             // 
@@ -126,9 +190,34 @@ namespace desktopdb
             this.klubBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.klubBindingNavigator.Name = "klubBindingNavigator";
             this.klubBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.klubBindingNavigator.Size = new System.Drawing.Size(423, 25);
+            this.klubBindingNavigator.Size = new System.Drawing.Size(314, 25);
             this.klubBindingNavigator.TabIndex = 0;
             this.klubBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -157,22 +246,16 @@ namespace desktopdb
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -180,7 +263,7 @@ namespace desktopdb
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -189,49 +272,22 @@ namespace desktopdb
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // klubBindingNavigatorSaveItem
             // 
             this.klubBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.klubBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("klubBindingNavigatorSaveItem.Image")));
             this.klubBindingNavigatorSaveItem.Name = "klubBindingNavigatorSaveItem";
-            this.klubBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.klubBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.klubBindingNavigatorSaveItem.Text = "Save Data";
             this.klubBindingNavigatorSaveItem.Click += new System.EventHandler(this.klubBindingNavigatorSaveItem_Click);
-            // 
-            // id_klubLabel
-            // 
-            id_klubLabel.AutoSize = true;
-            id_klubLabel.Location = new System.Drawing.Point(12, 40);
-            id_klubLabel.Name = "id_klubLabel";
-            id_klubLabel.Size = new System.Drawing.Size(41, 13);
-            id_klubLabel.TabIndex = 1;
-            id_klubLabel.Text = "id klub:";
             // 
             // id_klubTextBox
             // 
@@ -242,32 +298,15 @@ namespace desktopdb
             this.id_klubTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_klubTextBox.TabIndex = 2;
             // 
-            // id_ligaLabel
-            // 
-            id_ligaLabel.AutoSize = true;
-            id_ligaLabel.Location = new System.Drawing.Point(12, 66);
-            id_ligaLabel.Name = "id_ligaLabel";
-            id_ligaLabel.Size = new System.Drawing.Size(38, 13);
-            id_ligaLabel.TabIndex = 3;
-            id_ligaLabel.Text = "Id liga:";
-            // 
             // id_ligaTextBox
             // 
             this.id_ligaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klubBindingSource, "Id_liga", true));
             this.id_ligaTextBox.Enabled = false;
-            this.id_ligaTextBox.Location = new System.Drawing.Point(96, 63);
+            this.id_ligaTextBox.Location = new System.Drawing.Point(319, 63);
             this.id_ligaTextBox.Name = "id_ligaTextBox";
             this.id_ligaTextBox.Size = new System.Drawing.Size(200, 20);
             this.id_ligaTextBox.TabIndex = 4;
-            // 
-            // nazwaLabel
-            // 
-            nazwaLabel.AutoSize = true;
-            nazwaLabel.Location = new System.Drawing.Point(12, 92);
-            nazwaLabel.Name = "nazwaLabel";
-            nazwaLabel.Size = new System.Drawing.Size(41, 13);
-            nazwaLabel.TabIndex = 5;
-            nazwaLabel.Text = "nazwa:";
+            this.id_ligaTextBox.Visible = false;
             // 
             // nazwaTextBox
             // 
@@ -277,15 +316,6 @@ namespace desktopdb
             this.nazwaTextBox.Size = new System.Drawing.Size(200, 20);
             this.nazwaTextBox.TabIndex = 6;
             // 
-            // krajLabel
-            // 
-            krajLabel.AutoSize = true;
-            krajLabel.Location = new System.Drawing.Point(12, 118);
-            krajLabel.Name = "krajLabel";
-            krajLabel.Size = new System.Drawing.Size(27, 13);
-            krajLabel.TabIndex = 7;
-            krajLabel.Text = "kraj:";
-            // 
             // krajTextBox
             // 
             this.krajTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klubBindingSource, "kraj", true));
@@ -293,15 +323,6 @@ namespace desktopdb
             this.krajTextBox.Name = "krajTextBox";
             this.krajTextBox.Size = new System.Drawing.Size(200, 20);
             this.krajTextBox.TabIndex = 8;
-            // 
-            // ile_tytulowLabel
-            // 
-            ile_tytulowLabel.AutoSize = true;
-            ile_tytulowLabel.Location = new System.Drawing.Point(12, 144);
-            ile_tytulowLabel.Name = "ile_tytulowLabel";
-            ile_tytulowLabel.Size = new System.Drawing.Size(56, 13);
-            ile_tytulowLabel.TabIndex = 9;
-            ile_tytulowLabel.Text = "ile tytulow:";
             // 
             // ile_tytulowTextBox
             // 
@@ -311,15 +332,6 @@ namespace desktopdb
             this.ile_tytulowTextBox.Size = new System.Drawing.Size(200, 20);
             this.ile_tytulowTextBox.TabIndex = 10;
             // 
-            // data_zalozeniaLabel
-            // 
-            data_zalozeniaLabel.AutoSize = true;
-            data_zalozeniaLabel.Location = new System.Drawing.Point(12, 171);
-            data_zalozeniaLabel.Name = "data_zalozeniaLabel";
-            data_zalozeniaLabel.Size = new System.Drawing.Size(78, 13);
-            data_zalozeniaLabel.TabIndex = 11;
-            data_zalozeniaLabel.Text = "data zalozenia:";
-            // 
             // data_zalozeniaDateTimePicker
             // 
             this.data_zalozeniaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.klubBindingSource, "data_zalozenia", true));
@@ -327,15 +339,6 @@ namespace desktopdb
             this.data_zalozeniaDateTimePicker.Name = "data_zalozeniaDateTimePicker";
             this.data_zalozeniaDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.data_zalozeniaDateTimePicker.TabIndex = 12;
-            // 
-            // miastoLabel
-            // 
-            miastoLabel.AutoSize = true;
-            miastoLabel.Location = new System.Drawing.Point(12, 196);
-            miastoLabel.Name = "miastoLabel";
-            miastoLabel.Size = new System.Drawing.Size(40, 13);
-            miastoLabel.TabIndex = 13;
-            miastoLabel.Text = "miasto:";
             // 
             // miastoTextBox
             // 
@@ -345,11 +348,25 @@ namespace desktopdb
             this.miastoTextBox.Size = new System.Drawing.Size(200, 20);
             this.miastoTextBox.TabIndex = 14;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 16;
+            this.comboBox1.Location = new System.Drawing.Point(96, 61);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.Text = "Wybierz";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // modyfikuj_kluby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 259);
+            this.ClientSize = new System.Drawing.Size(314, 234);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(id_klubLabel);
             this.Controls.Add(this.id_klubTextBox);
             this.Controls.Add(id_ligaLabel);
@@ -367,7 +384,7 @@ namespace desktopdb
             this.Controls.Add(this.klubBindingNavigator);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "modyfikuj_kluby";
-            this.Text = "Form4";
+            this.Text = "Kluby";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pabDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klubBindingSource)).EndInit();
@@ -405,5 +422,6 @@ namespace desktopdb
         private System.Windows.Forms.TextBox ile_tytulowTextBox;
         private System.Windows.Forms.DateTimePicker data_zalozeniaDateTimePicker;
         private System.Windows.Forms.TextBox miastoTextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -61,6 +61,7 @@ namespace desktopdb
             DataTable dtKolory = new DataTable();
             using (SqlConnection connection = new SqlConnection(Polaczenie))
             {
+                //kluby
                 using (SqlCommand cmd = new SqlCommand("select id_klub, Liga.nazwa, Klub.nazwa, Klub.kraj, ile_tytulow, miasto from Klub INNER JOIN Liga on Klub.Id_liga = Liga.Id_liga", connection))
                 {
                     connection.Open();
@@ -133,7 +134,8 @@ namespace desktopdb
             DataTable dtRabat = new DataTable();
             using (SqlConnection connection = new SqlConnection(Polaczenie))
             {
-                using (SqlCommand cmd = new SqlCommand("select * from Zawodnicy_na_treningu", connection))
+               //" kluby select id_klub, Liga.nazwa, Klub.nazwa, Klub.kraj, ile_tytulow, miasto from Klub INNER JOIN Liga on Klub.Id_liga = Liga.Id_liga"
+                using (SqlCommand cmd = new SqlCommand("select * from Zawodnicy_na_treningu INNER JOIN trening on zawodnicy_na_treningu.id_trening = trening.id_trening ", connection))
                 {
                     connection.Open();
                     SqlDataReader czytaj = cmd.ExecuteReader();
@@ -146,48 +148,14 @@ namespace desktopdb
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            DataTable dtTransakcje = new DataTable();
-            using (SqlConnection connection = new SqlConnection(Polaczenie))
-            {
-                using (SqlCommand cmd = new SqlCommand("select Marki.Nazwa_Marki, Nazwa_Modelu, Rodzaj_Nazwa, Rodzaje_Transakcji.Zaliczka_Kwota, Klienci.Imie, Klienci.Nazwisko, Klienci.Data_Urodzenia, Klienci.Kod_Pocztowy, Klienci.Nip, Klienci.Ulica, Klienci.Miasto, Klienci.Nr_Domu, Klienci.Nr_Lokalu, Klienci.Mail, Klienci.Nr_Telefonu, Klienci.Nr_Dokumentu, Klienci.Rodzaj_Dokumentu, Klienci.Pesel, Pojazdy.Cena, Pojazdy.Data_Sprzedazy, Kwota, Nr_Faktury, Zaplacono, Data_Transakcji from Transakcje INNER JOIN Rodzaje_Transakcji on Transakcje.ID_Roadzj_Transakcji = Rodzaje_Transakcji.ID_Roadzj_Transakcji INNER JOIN Klienci on Transakcje.ID_Klienta = Klienci.ID_Klienta INNER JOIN Pojazdy on Transakcje.ID_Pojazdu = Pojazdy.ID_Pojazdu INNER JOIN Model on Pojazdy.ID_Modelu = Model.ID_Modelu INNER JOIN Marki on Model.ID_Marki = Marki.ID_Marki", connection))
-                {
-                    connection.Open();
-                    SqlDataReader czytaj = cmd.ExecuteReader();
-
-                    dtTransakcje.Load(czytaj);
-
-                    dataGridView1.DataSource = dtTransakcje;
-                    dataGridView1.Visible = true;
-                }
-            }
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            DataTable dtKlienci = new DataTable();
-            using (SqlConnection connection = new SqlConnection(Polaczenie))
-            {
-                using (SqlCommand cmd = new SqlCommand("select * from Klienci", connection))
-                {
-                    connection.Open();
-                    SqlDataReader czytaj = cmd.ExecuteReader();
-
-                    dtKlienci.Load(czytaj);
-
-                    dataGridView1.DataSource = dtKlienci;
-                    dataGridView1.Visible = true;
-                }
-            }
-        }
+                
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+         
             //this.Hide();
             dataGridView1.Visible = false;
-            form3.ShowDialog();
+         
         }
 
         private void button10_Click(object sender, EventArgs e)
